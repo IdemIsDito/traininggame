@@ -1,13 +1,19 @@
 import 'bootstrap';
-// import 'bootstrap/css/bootstrap.css!';
+/*import 'bootstrap/css/bootstrap.css!';*/
 
 import {inject} from 'aurelia-framework';
 import {Router} from 'aurelia-router';
+import AppRouterConfig from 'app.router.config';
 
-@inject(Router)
+@inject(Router,AppRouterConfig )
 export class App {
 
-  constructor(router){
+  constructor(router, appRouterConfig){
     this.router = router;
+    this.appRouterConfig = appRouterConfig;
+  }
+
+  activate(){
+    this.appRouterConfig.configure();
   }
 }
