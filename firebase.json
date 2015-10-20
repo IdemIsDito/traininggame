@@ -1,0 +1,9 @@
+{
+  "firebase": "oefenwedstrijd",
+  "public": "mine",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

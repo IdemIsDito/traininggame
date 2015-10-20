@@ -55,6 +55,7 @@
   "jspm": {
     "dependencies": {
       "aurelia-animator-css": "github:aurelia/animator-css@^0.16.0",
+      "aurelia-auth": "github:paulvanbladel/aurelia-auth@^0.9.19",
       "aurelia-binding": "github:aurelia/binding@^0.9.0",
       "aurelia-bootstrapper": "github:aurelia/bootstrapper@^0.17.0",
       "aurelia-dependency-injection": "github:aurelia/dependency-injection@^0.10.0",
@@ -81,6 +82,7 @@
       "firebase": "github:firebase/firebase-bower@^2.3.1",
       "font-awesome": "npm:font-awesome@^4.3.0",
       "lodash": "npm:lodash@^3.10.1",
+      "moment": "github:moment/moment@^2.10.6",
       "text": "github:systemjs/plugin-text@^0.0.2"
     },
     "devDependencies": {

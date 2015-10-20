@@ -10,7 +10,6 @@ export class Games {
       email: "jeroenrwever@gmail.com",
       password: "testing123"
     }, function(error, userData) {
-      debugger;
       if (error) {
         console.log("Error creating user:", error);
       } else {

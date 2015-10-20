@@ -1,13 +1,17 @@
 <template>
-  <div class="container">
-    <h1>${heading}</h1>
-    <ul>
-      <li repeat.for="[id, game] of games">
-        ${id}
-        <input type="text" value.bind="game.title">
-        <input type="text" value.bind="game.players">
-        <button class="btn btn-default" click.trigger="$parent.saveGame(id,game)">setGames</button>
-      </li>
-    </ul>
+  <require from="game-item"></require>
+  <div class="au-animate container">
+    <h1 class="page-header text-center">${heading}</h1>
+    <section class="row">
+      <div class="col-xs-12">
+        <a route-href="route: new-game" class="btn btn-default">
+          <span class="glyphicon glyphicon-plus-sign"></span>
+          Nieuwe wedstrijd
+        </a>
+      </div>
+    </section>
+    <section class="row" repeat.for="game of games">
+      <game-item game.bind="game"></game-item>
+    </section>
   </div>
 </template>

@@ -1,23 +1,13 @@
 import 'bootstrap';
 // import 'bootstrap/css/bootstrap.css!';
 
-export class App {
-  configureRouter(config, router) {
-    config.title = 'Oefenwedstrijdje';
-    config.map([{
-      route: ['', 'wedstrijden'],
-      name: 'games',
-      moduleId: 'games',
-      nav: true,
-      title: 'Wedstrijden'
-    }, {
-      route: 'user',
-      name: 'user',
-      moduleId: 'user',
-      nav: true,
-      title: 'Users'
-    }]);
+import {inject} from 'aurelia-framework';
+import {Router} from 'aurelia-router';
 
+@inject(Router)
+export class App {
+
+  constructor(router){
     this.router = router;
   }
 }
