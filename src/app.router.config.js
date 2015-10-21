@@ -1,4 +1,4 @@
-import {AuthorizeStep} from 'aurelia-auth';
+import {AuthorizeStepJay} from './AuthorizeStep';
 import {inject} from 'aurelia-framework';
 import {Router} from 'aurelia-router';
 
@@ -13,7 +13,7 @@ export default class {
     var appRouterConfig = function(config) {
       config.title = 'Oefenwedstrijdje';
 
-      config.addPipelineStep('authorize', AuthorizeStep); // Add a route filter to the authorize extensibility point.
+      config.addPipelineStep('authorize', AuthorizeStepJay); // Add a route filter to the authorize extensibility point.
 
       config.map([{
         route: ['', 'wedstrijden'],

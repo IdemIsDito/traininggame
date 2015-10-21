@@ -1,33 +1,17 @@
-import {AuthService} from 'aurelia-auth';
 import {inject} from 'aurelia-framework';
+import {AuthContextJay} from 'AuthContext';
 
-@inject(AuthService )
-
+@inject(AuthContextJay)
 export class Login{
-	constructor(auth){
-		this.auth = auth;
-	};
+	constructor(AuthContextJay) {
+    this.authContext = AuthContextJay;
+  }
 
-	heading = 'Login';
-
-	email='';
-	password='';
-
-	login(){
-		return this.auth.login(this.email, this.password)
-		.then(response=>{
-			console.log("success logged " + response);
-		})
-		.catch(err=>{
-			console.log("login failure");
-		});
-	};
+	login() {
+		this.authContext.login(this.email, this.password);
+	}
 
 	authenticate(name){
-		return this.auth.authenticate(name, false, null)
-		.then((response)=>{
-			console.log("auth response " + response);
-		});
-
+		alert('test');
 	}
 }
