@@ -1,5 +1,5 @@
 <template>
-  <require from="game-item"></require>
+  <require from="partials/game-list-item"></require>
   <div class="au-animate container">
     <h1 class="page-header text-center">${heading}</h1>
     <section class="row">
@@ -11,7 +11,7 @@
       </div>
     </section>
     <section class="row" repeat.for="game of games">
-      <game-item game.bind="game"></game-item>
+      <game-list-item game.bind="game"></game-list-item>
     </section>
   </div>
 </template>

@@ -1,11 +1,14 @@
-import Firebase from 'github:firebase/firebase-bower@2.3.1';
-import _ from 'lodash';
+import {inject} from 'aurelia-framework';
+import {appConfig} from '../app.config';
+import Firebase from 'firebase';
 import moment from 'moment';
+import _ from 'lodash';
 
+@inject(appConfig)
 export class Games {
-  constructor(){
+  constructor(appConfig){
     this.heading = 'Wedstrijden';
-    this.ref = new Firebase('https://oefenwedstrijd.firebaseio.com/');
+    this.ref = new Firebase(appConfig.fireUrl);
   }
 
   saveGame(id, game) {

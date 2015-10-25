@@ -1,15 +1,16 @@
+import {inject} from 'aurelia-framework';
+import {appConfig} from '../app.config';
 import Firebase from 'firebase';
-import _ from 'lodash';
 
-export class AuthContextJay {
+@inject(appConfig)
+export class AuthContext {
 
-  constructor(){
-    this.ref = new Firebase('https://oefenwedstrijd.firebaseio.com/');
-    this.user = {};
+  constructor(appConfig){
+    this.ref = new Firebase(appConfig.fireUrl);
   }
 
-  isLoggedIn() {
-    return !_.isUndefined(this.user.uid);
+  user() {
+    return this.ref.getAuth();
   }
 
   login(email, pass) {
@@ -25,5 +26,9 @@ export class AuthContextJay {
         self.user = authData;
       }
     });
+  }
+
+  logout (){
+    this.ref.unauth();
   }
 }

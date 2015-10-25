@@ -1,4 +1,4 @@
-import {AuthorizeStepJay} from './AuthorizeStep';
+import {AuthorizeStep} from './auth/AuthorizeStep';
 import {inject} from 'aurelia-framework';
 import {Router} from 'aurelia-router';
 
@@ -13,47 +13,36 @@ export default class {
     var appRouterConfig = function(config) {
       config.title = 'Oefenwedstrijdje';
 
-      config.addPipelineStep('authorize', AuthorizeStepJay); // Add a route filter to the authorize extensibility point.
+      config.addPipelineStep('authorize', AuthorizeStep); // Add a route filter to the authorize extensibility point.
 
       config.map([{
         route: ['', 'wedstrijden'],
         name: 'games',
-        moduleId: 'games',
+        moduleId: './pages/games',
         nav: true,
         title: 'Wedstrijden'
       }, {
         route: 'nieuwe-wedstrijd',
         name: 'new-game',
-        moduleId: 'new-game',
+        moduleId: './pages/new-game',
         nav: true,
-        title: 'Nieuw Wedstrijd'
-      }, {
-        route: 'user',
-        name: 'user',
-        moduleId: 'user',
-        nav: true,
-        title: 'Users',
+        title: 'Nieuw Wedstrijd',
         auth: true
       }, {
         route: 'signup',
-        moduleId: './signup',
+        moduleId: './auth/signup',
         nav: false,
         title: 'Signup'
       }, {
         route: 'login',
-        moduleId: './login',
+        moduleId: './auth/login',
         nav: false,
         title: 'Login'
       }, {
         route: 'logout',
-        moduleId: './logout',
+        moduleId: './auth/logout',
         nav: false,
         title: 'Logout'
-      }, {
-        route: 'profile',
-        moduleId: './profile',
-        nav: false,
-        title: 'Profile'
       }]);
     };
     this.router.configure(appRouterConfig);

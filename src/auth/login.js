@@ -1,10 +1,10 @@
 import {inject} from 'aurelia-framework';
-import {AuthContextJay} from 'AuthContext';
+import {AuthContext} from './AuthContext';
 
-@inject(AuthContextJay)
+@inject(AuthContext)
 export class Login{
-	constructor(AuthContextJay) {
-    this.authContext = AuthContextJay;
+	constructor(AuthContext) {
+    this.authContext = AuthContext;
   }
 
 	login() {

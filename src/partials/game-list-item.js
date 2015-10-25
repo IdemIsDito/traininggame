@@ -1,10 +1,13 @@
 import {bindable} from 'aurelia-framework';
+import {inject} from 'aurelia-framework';
+import {appConfig} from '../app.config';
+import Firebase from 'firebase';
 import moment from 'moment';
-import Firebase from 'github:firebase/firebase-bower@2.3.1';
 
-export class GameItemCustomElement {
-  constructor() {
-    this.ref = new Firebase('https://oefenwedstrijd.firebaseio.com/');
+@inject(appConfig)
+export class GameListItemCustomElement {
+  constructor(appConfig) {
+    this.ref = new Firebase(appConfig.fireUrl);
   }
 
   @bindable game;
