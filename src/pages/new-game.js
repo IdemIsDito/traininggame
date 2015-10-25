@@ -1,13 +1,13 @@
 import {inject} from 'aurelia-framework';
-import {AuthContext} from '../auth/AuthContext';
+import {AuthService} from '../services/AuthService';
 import {appConfig} from '../app.config';
 import Firebase from 'firebase';
 import moment from 'moment';
 
-@inject(AuthContext, appConfig)
+@inject(AuthService, appConfig)
 export class NewGame {
-  constructor(AuthContext, appConfig){
-    this.authContext = AuthContext;
+  constructor(AuthService, appConfig){
+    this.authService = AuthService;
     this.heading = 'Nieuwe Wedstrijd';
     this.ref = new Firebase(appConfig.fireUrl);
     this.game = {
@@ -31,7 +31,7 @@ export class NewGame {
     });
   }
   activate() {
-    let user = this.authContext.user();
+    let user = this.authService.user();
     this.game.home[user.uid] = true;
   }
 }

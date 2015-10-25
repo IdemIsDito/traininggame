@@ -1,4 +1,4 @@
-import {AuthorizeStep} from './auth/AuthorizeStep';
+import {AuthorizeStep} from './AuthorizeStep';
 import {inject} from 'aurelia-framework';
 import {Router} from 'aurelia-router';
 
@@ -30,18 +30,18 @@ export default class {
         auth: true
       }, {
         route: 'signup',
-        moduleId: './auth/signup',
+        moduleId: './pages/signup',
         nav: false,
         title: 'Signup'
       }, {
         route: 'login',
-        moduleId: './auth/login',
+        moduleId: './pages/login',
         nav: false,
         title: 'Login'
       }, {
         route: 'logout',
-        moduleId: './auth/logout',
-        nav: false,
+        moduleId: './pages/logout',
+        nav: true,
         title: 'Logout'
       }]);
     };

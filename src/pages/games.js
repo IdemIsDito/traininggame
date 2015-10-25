@@ -1,29 +1,23 @@
 import {inject} from 'aurelia-framework';
-import {appConfig} from '../app.config';
-import Firebase from 'firebase';
-import moment from 'moment';
+import {GameService} from '../services/gameService';
 import _ from 'lodash';
 
-@inject(appConfig)
+@inject(GameService)
 export class Games {
-  constructor(appConfig){
+  constructor(gameService){
     this.heading = 'Wedstrijden';
-    this.ref = new Firebase(appConfig.fireUrl);
+    this.gameService = gameService;
+    this.games = [];
   }
-
-  saveGame(id, game) {
-    let currentGameRef = this.ref.child('games').child(id);
-    currentGameRef.update(game);
-  }
-
   activate() {
     var self = this;
-    return this.ref.child('games').on("value", (snapshot) => {
-      self.games = [];
-      _.each(snapshot.val(), (v,k) => {
-        v.id = k;
-        self.games.push(v);
+    return this.gameService.getGames()
+      .then((games) => {
+        _.each(games, (v,k) => {
+          v.id = k;
+          self.games.push(v);
+        });
       });
-    });
+      //TODO handle failures!
   }
 }

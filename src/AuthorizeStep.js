@@ -1,15 +1,15 @@
 import {Redirect} from 'aurelia-router';
 import {inject} from 'aurelia-framework';
-import {AuthContext} from './AuthContext';
+import {AuthService} from './services/AuthService';
 
-@inject(AuthContext)
+@inject(AuthService)
 export class AuthorizeStep {
-  constructor(AuthContext) {
-    this.authContext = AuthContext;
+  constructor(AuthService) {
+    this.authService = AuthService;
   }
   run(routingContext, next) {
       if (routingContext.nextInstructions.some(i => i.config.auth)) {
-        if (!this.authContext.user()) {
+        if (!this.authService.user()) {
           return next.cancel(new Redirect('login'));
         }
       }
