@@ -8,8 +8,8 @@ export class GameListItemCustomElement {
     this.gameService = GameService;
   }
   @bindable game;
-
   get gameDate(){
+    //TODO Localization
     return moment(`${this.game.date}`).format("MMM Do YY");
   }
 }

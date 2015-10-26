@@ -21,11 +21,18 @@ export default class {
         moduleId: './pages/games',
         nav: true,
         title: 'Wedstrijden'
+      },{
+        route: 'wedstrijd/:gameId',
+        name: 'game',
+        moduleId: './pages/game',
+        nav: false,
+        title: 'Wedstrijd',
+        auth: false
       }, {
         route: 'nieuwe-wedstrijd',
         name: 'new-game',
         moduleId: './pages/new-game',
-        nav: true,
+        nav: false,
         title: 'Nieuw Wedstrijd',
         auth: true
       }, {

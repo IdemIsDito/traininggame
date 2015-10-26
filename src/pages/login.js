@@ -1,5 +1,5 @@
 import {inject} from 'aurelia-framework';
-import {AuthService} from '../services/AuthService';
+import {AuthService} from '../services/authService';
 import {Router} from 'aurelia-router';
 
 @inject(AuthService, Router)

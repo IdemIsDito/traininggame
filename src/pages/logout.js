@@ -1,6 +1,6 @@
 import {inject} from 'aurelia-framework';
 import {Router} from 'aurelia-router';
-import {AuthService} from '../services/AuthService';
+import {AuthService} from '../services/authService';
 
 @inject(AuthService, Router)
 export class Logout{
@@ -10,7 +10,7 @@ export class Logout{
 	}
 
 	 activate(){
-    return this.AuthService.logout()
-      .then(router.navigateToRoute('games'));
+    return this.AuthService.logout();
+      //.then(router.navigateToRoute('games'));
 	}
 }

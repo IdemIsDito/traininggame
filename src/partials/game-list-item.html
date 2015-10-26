@@ -1,12 +1,24 @@
 <template>
-  <article class="col-xs-12">
-    <div class="panel panel-default">
+    <article class="panel panel-default panel-game">
       <div class="panel-body">
-        <div class="pull-left">
-          <h2>${gameDate} - ${game.time}</h2>
-          <h3>${game.club} - ${game.location}</h3>
-        </div>
+        <a route-href="route: game; params.bind: { gameId: game.id }">
+          <div class="row">
+              <div class="col-xs-4">
+                  <img class="img-circle img-thumbnail pull-left" width="100" src="http://www.mysites.nl/upload2/edo-peter/329769.jpg">
+                  <h2 class="pull-left">${game.club}</h2>
+              </div>
+              <div class="col-xs-4">
+                <p class="text-center">${gameDate}</p>
+                <p class="text-center">${game.time}</p>
+                <p class="text-center">${game.location}</p>
+              </div>
+              <div class="col-xs-4">
+                <img class="pull-right img-circle img-thumbnail" width="100" src="http://blackopswiki.s3.amazonaws.com/uploads/article/avatar/319/large_avatar_default-user-icon.png">
+                <h2 class="pull-right">${game.club}</h2>
+              </div>
+            </div>
+          </div>
+        </a>
       </div>
-    </div>
-  </article>
+    </article>
 </temlate>

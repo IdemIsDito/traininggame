@@ -21,6 +21,8 @@ export class AuthService {
   }
 
   logout (){
-    return this.ref.unauth();
+    //TODO return promise
+    //This method was not promisified by firenext;
+    this.ref.unauth();
   }
 }

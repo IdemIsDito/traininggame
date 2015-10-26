@@ -1,5 +1,5 @@
 import {inject} from 'aurelia-framework';
-import {AuthService} from '../services/AuthService';
+import {AuthService} from '../services/authService';
 import {appConfig} from '../app.config';
 import Firebase from 'firebase';
 import moment from 'moment';

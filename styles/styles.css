@@ -12,8 +12,6 @@ body {
 .splash .message {
     font-size: 72px;
     line-height: 72px;
-    text-shadow: rgba(0, 0, 0, 0.5) 0 0 15px;
-    text-transform: uppercase;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -176,4 +174,14 @@ div.au-stagger {
   100% {
     opacity: 1;
   }
+}
+
+.game-container {
+  margin-top: 20px;
+}
+
+.panel-game h2{
+  line-height: 100px;
+  margin: 0;
+  padding: 0 16px;
 }

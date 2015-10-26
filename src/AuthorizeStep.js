@@ -1,6 +1,6 @@
 import {Redirect} from 'aurelia-router';
 import {inject} from 'aurelia-framework';
-import {AuthService} from './services/AuthService';
+import {AuthService} from './services/authService';
 
 @inject(AuthService)
 export class AuthorizeStep {
