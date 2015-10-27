@@ -1,7 +1,7 @@
 import {bindable} from 'aurelia-framework';
 import {inject} from 'aurelia-framework';
 import moment from 'moment';
-import {GameService} from '../services/GameService';
+import {GameService} from '../services/gameService';
 @inject(GameService)
 export class GameListItemCustomElement {
   constructor(GameService){
